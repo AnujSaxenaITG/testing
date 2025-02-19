@@ -1,0 +1,57 @@
+<section class="custom-collection-section">
+  <div class="section-content">
+    {% for block in section.blocks %}
+    <div class="oneThird">
+      <a href="{{ block.settings.title_link }}">
+        <figure>
+          <img src="{{ block.settings.images | img_url: 'master' }}" />
+        </figure>
+        <figcaption>
+          <h3>
+            {{ block.settings.title }}
+          </h3>
+        </figcaption>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% schema %}
+{
+    "name": "Collection Homepage",
+    "settings": [
+        
+   ],
+    "blocks": [
+         {
+            "type": "collection-banner-title",
+            "name": "Collection Banner",
+            "settings": [  
+                {
+                  "type": "image_picker",
+                  "id": "images",
+                  "label": "Upload Image"
+                },
+				{
+                  "type": "text",
+                  "id": "title",
+                  "label": "Upload Image"
+                },
+				{
+                  "type": "url",
+                  "id": "title_link",
+                  "label": "Upload Image"
+                }
+            ]
+        }
+	],
+    "presets": [
+        {
+          "name": "Collection Homepage",
+          "category": "Collection with Title"
+        }
+   ]
+}
+{% endschema %}
+{% stylesheet %}
+{% endstylesheet %}
